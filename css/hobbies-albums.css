@@ -1,0 +1,49 @@
+.library-cover.cover-people.cover-single { display: block; }
+.cover-people.cover-single img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cover-people.cover-single img:first-child { grid-row: auto; }
+.cover-people.modelling-cover-front img { object-position: center 35%; }
+.cover-people.food-cover-front img { object-position: center; }
+.cover-people.photography-cover-front img { object-position: center 68%; }
+.cover-people.run-cover-front img { object-position: center 62%; }
+.cover-people.music-cover-guitar img { object-position: center 45%; }
+
+/* Keep every playlist cover the same fixed card size as Learning Era. */
+.hobby-library-grid .library-cover { height: 170px; min-height: 0; }
+
+/* Muted 50% opacity video replacing the former anime artwork in the hobbies hero. */
+.page-hero:has(.hobbies-video-backdrop) { isolation: isolate; }
+.page-hero:has(.hobbies-video-backdrop) > :not(.hobbies-video-backdrop):not(.love-alarm-heart) { position: relative; z-index: 1; }
+.hobbies-video-backdrop { position: absolute; z-index: 0; inset: 0; overflow: hidden; opacity: .5; pointer-events: none; }
+.hobbies-video-backdrop video { width: 100%; height: 100%; object-fit: cover; }
+
+.music-flashcard { justify-content:flex-start; gap:.7rem; }
+.music-flashcard > span { margin-bottom:0; }
+.music-track-player { width:100%; height:80px; margin-top:auto; border:0; border-radius:12px; }
+.memories-flashcard { position:relative; overflow:hidden; }
+.memories-flashcard > :not(.memories-movie-image) { position:relative; z-index:1; }
+.memories-movie-image { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#c4f5d3; }
+.memories-flashcard::after { position:absolute; z-index:0; inset:0; background:linear-gradient(180deg,rgba(196,245,211,.1),rgba(0,0,0,.34)); content:''; pointer-events:none; }
+.memories-flashcard h2,.memories-flashcard p { text-shadow:0 1px 8px rgba(0,0,0,.7); }
+
+.library-cover.cover-loml-video { display: block; padding: 0; background: #171717; }
+.cover-loml-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cover-loml-video::after { display: none; }
+.loml-video-play { position: absolute; z-index: 1; inset: 50% auto auto 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: .45rem; border: 0; border-radius: 999px; padding: .58rem .82rem; background: rgba(0, 0, 0, .78); color: #fff; font: 700 .72rem var(--font-body); cursor: pointer; white-space: nowrap; }
+.loml-video-play:hover, .loml-video-play:focus-visible { background: var(--green); color: #111; outline: 2px solid #fff; outline-offset: 2px; }
+
+.gallery-image-button { cursor: zoom-in; }
+.gallery-image-button:focus-visible { outline: 3px solid var(--green); outline-offset: -3px; }
+.photo-lightbox[hidden] { display: none; }
+.photo-lightbox { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; padding: 1.5rem; background: rgba(0, 0, 0, .9); }
+.photo-lightbox img { max-width: 100%; max-height: calc(100vh - 3rem); border-radius: 8px; object-fit: contain; box-shadow: 0 20px 60px rgba(0, 0, 0, .65); }
+.photo-lightbox-close { position: fixed; top: 1rem; right: 1rem; width: 42px; height: 42px; border: 0; border-radius: 50%; background: #fff; color: #111; font-size: 1.5rem; cursor: pointer; }
+.photo-lightbox-close:hover, .photo-lightbox-close:focus-visible { background: var(--green); outline: 2px solid #fff; outline-offset: 2px; }
+
+.people-gallery-grid.single-photo-gallery { grid-template-columns: minmax(0, 1fr); }
+.people-gallery-grid.single-photo-gallery figure { aspect-ratio: auto; max-height: 68vh; }
+.people-gallery-grid.single-photo-gallery img { display: block; object-fit: contain; }
+
+@media (max-width: 620px) {
+  .hobby-library-grid .library-cover { height: 135px; }
+  .people-gallery-grid.single-photo-gallery { grid-template-columns: minmax(0, 1fr); }
+}

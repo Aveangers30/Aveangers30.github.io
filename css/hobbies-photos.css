@@ -1,0 +1,19 @@
+.library-cover.cover-modelling {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  padding: 0;
+  background: #183756;
+}
+
+.cover-modelling img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-modelling img:first-child { grid-row: span 2; object-position: center 54%; }
+.cover-modelling img:nth-child(2) { object-position: center 44%; }
+.cover-modelling img:nth-child(3) { object-position: center 42%; }
+.cover-modelling::after { display: none; }
